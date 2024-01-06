@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	
 )
 
 type Todo struct {
@@ -44,7 +45,8 @@ func main() {
 	// Define routes
 	router.HandleFunc("/todos", getTodos).Methods("GET")
 	router.HandleFunc("/todos", createTodo).Methods("POST")
-
+	
+    // Enable CORS
 	// Start the server
 	port := 8000
 	fmt.Printf("Server running on :%d\n", port)
